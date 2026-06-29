@@ -16,10 +16,7 @@ jobs:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v4.2.2
 
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@master
-
-      - name: Tap this repository
-        run: brew tap shriyanss/tap .
+        uses: Homebrew/actions/setup-homebrew@main
 
       - name: Audit formula
         run: brew audit --strict shriyanss/tap/js-recon
