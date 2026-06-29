@@ -3,7 +3,6 @@ class JsRecon < Formula
   homepage "https://js-recon.io"
   url "https://registry.npmjs.org/@shriyanss/js-recon/-/js-recon-1.4.1-alpha.4.tgz"
   sha256 "d115057a4fbfc8cb574b6284bba25be8bb31702c3513ec552ec65690f6ab6602"
-  version "1.4.1-alpha.4"
   license "MIT"
 
   livecheck do
