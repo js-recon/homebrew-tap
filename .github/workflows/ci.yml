@@ -18,11 +18,14 @@ jobs:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
+      - name: Tap this repository
+        run: brew tap shriyanss/tap .
+
       - name: Audit formula
-        run: brew audit --strict Formula/js-recon.rb
+        run: brew audit --strict shriyanss/tap/js-recon
 
       - name: Install formula
-        run: brew install --build-from-source Formula/js-recon.rb
+        run: brew install --build-from-source shriyanss/tap/js-recon
 
       - name: Test formula
-        run: brew test Formula/js-recon.rb
+        run: brew test shriyanss/tap/js-recon
