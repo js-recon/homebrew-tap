@@ -24,18 +24,18 @@ jobs:
 
       - name: Audit formulas
         run: |
-          brew audit --strict shriyanss/tap/js-recon
-          brew audit --strict shriyanss/tap/js-recon-alpha
-          brew audit --strict shriyanss/tap/js-recon-beta
+          brew audit --strict js-recon/tap/js-recon
+          brew audit --strict js-recon/tap/js-recon-alpha
+          brew audit --strict js-recon/tap/js-recon-beta
 
       - name: Install formulas
         run: |
-          brew install --build-from-source shriyanss/tap/js-recon
-          brew install --build-from-source shriyanss/tap/js-recon-alpha
-          brew install --build-from-source shriyanss/tap/js-recon-beta
+          brew install --build-from-source js-recon/tap/js-recon
+          brew install --build-from-source js-recon/tap/js-recon-alpha
+          brew install --build-from-source js-recon/tap/js-recon-beta
 
       - name: Test formulas
         run: |
-          brew test shriyanss/tap/js-recon
-          brew test shriyanss/tap/js-recon-alpha
-          brew test shriyanss/tap/js-recon-beta
+          brew test js-recon/tap/js-recon
+          brew test js-recon/tap/js-recon-alpha
+          brew test js-recon/tap/js-recon-beta

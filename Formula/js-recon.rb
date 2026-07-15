@@ -1,12 +1,12 @@
 class JsRecon < Formula
   desc "JavaScript recon tool for API mapping and client-side security analysis"
   homepage "https://js-recon.io"
-  url "https://registry.npmjs.org/@shriyanss/js-recon/-/js-recon-1.3.1.tgz"
+  url "https://registry.npmjs.org/@js-recon/js-recon/-/js-recon-1.3.1.tgz"
   sha256 "83a35c7ff19ad24b63b0f0b37c1225753b49e0c9a48b53697d0d6e3b574192d5"
   license "MIT"
 
   livecheck do
-    url "https://registry.npmjs.org/@shriyanss/js-recon/latest"
+    url "https://registry.npmjs.org/@js-recon/js-recon/latest"
     regex(/"version":\s*"(\d+(?:\.\d+)+)"/i)
   end
 
@@ -29,7 +29,7 @@ class JsRecon < Formula
       installed by this formula.
 
       Option A — install Puppeteer's managed Chromium after install:
-        "$(brew --prefix)/lib/node_modules/@shriyanss/js-recon/node_modules/.bin/puppeteer" \\
+        "$(brew --prefix)/lib/node_modules/@js-recon/js-recon/node_modules/.bin/puppeteer" \\
           browsers install chrome
 
       Option B — point js-recon at an existing Chrome installation:

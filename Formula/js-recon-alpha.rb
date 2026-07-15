@@ -1,18 +1,18 @@
 class JsReconAlpha < Formula
   desc "JavaScript recon tool for API mapping and client-side security analysis"
   homepage "https://js-recon.io"
-  url "https://registry.npmjs.org/@shriyanss/js-recon/-/js-recon-1.4.1-alpha.9.tgz"
+  url "https://registry.npmjs.org/@js-recon/js-recon/-/js-recon-1.4.1-alpha.9.tgz"
   sha256 "84b3a417393dc0b92da5a35015553526eef2074b15015cd1a5abb30ca7c2041b"
   license "MIT"
 
   livecheck do
-    url "https://registry.npmjs.org/@shriyanss/js-recon/alpha"
+    url "https://registry.npmjs.org/@js-recon/js-recon/alpha"
     regex(/"version":\s*"(\S+)"/i)
   end
 
-  # Same binary name as shriyanss/tap/js-recon (the stable formula) — avoid
+  # Same binary name as js-recon/tap/js-recon (the stable formula) — avoid
   # linking into a shared bin/ automatically so both can coexist unlinked.
-  keg_only "js-recon-alpha installs the same `js-recon` binary name as shriyanss/tap/js-recon"
+  keg_only "js-recon-alpha installs the same `js-recon` binary name as js-recon/tap/js-recon"
 
   depends_on "node"
 
@@ -30,7 +30,7 @@ class JsReconAlpha < Formula
     <<~EOS
       This is the alpha channel of js-recon — it tracks the latest prerelease,
       not the stable release. For the stable release, install
-      `shriyanss/tap/js-recon` instead.
+      `js-recon/tap/js-recon` instead.
 
       This formula is keg-only and does not link into Homebrew's shared bin/,
       since it installs the same `js-recon` binary name as the stable
@@ -44,7 +44,7 @@ class JsReconAlpha < Formula
       installed by this formula.
 
       Option A — install Puppeteer's managed Chromium after install:
-        "$(brew --prefix)/lib/node_modules/@shriyanss/js-recon/node_modules/.bin/puppeteer" \\
+        "$(brew --prefix)/lib/node_modules/@js-recon/js-recon/node_modules/.bin/puppeteer" \\
           browsers install chrome
 
       Option B — point js-recon at an existing Chrome installation:

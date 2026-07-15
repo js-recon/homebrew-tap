@@ -1,11 +1,11 @@
 # homebrew-tap
 
-Homebrew tap for [JS Recon](https://github.com/shriyanss/js-recon) — a JavaScript reconnaissance tool for mapping API endpoints and analyzing client-side security issues in modern web applications.
+Homebrew tap for [JS Recon](https://github.com/js-recon/js-recon) — a JavaScript reconnaissance tool for mapping API endpoints and analyzing client-side security issues in modern web applications.
 
 ## Installation
 
 ```bash
-brew tap shriyanss/tap
+brew tap js-recon/tap
 brew install js-recon
 ```
 
@@ -23,8 +23,8 @@ brew upgrade js-recon
 For the latest alpha or beta prerelease, install the corresponding versioned formula instead:
 
 ```bash
-brew install shriyanss/tap/js-recon-alpha
-brew install shriyanss/tap/js-recon-beta
+brew install js-recon/tap/js-recon-alpha
+brew install js-recon/tap/js-recon-beta
 ```
 
 These formulas are keg-only (they install the same `js-recon` binary name as the
@@ -34,8 +34,8 @@ stable formula, so they don't link into the shared `bin/` automatically) — see
 For the latest alpha or beta build via npm instead:
 
 ```bash
-npm i -g @shriyanss/js-recon@alpha
-npm i -g @shriyanss/js-recon@beta
+npm i -g @js-recon/js-recon@alpha
+npm i -g @js-recon/js-recon@beta
 ```
 
 ## Browser requirement
