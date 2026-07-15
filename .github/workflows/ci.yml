@@ -8,7 +8,11 @@ on:
 
 jobs:
   audit:
-    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
     env:
       PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "1"
       PUPPETEER_SKIP_DOWNLOAD: "1"
@@ -18,11 +22,20 @@ jobs:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@main
 
-      - name: Audit formula
-        run: brew audit --strict shriyanss/tap/js-recon
+      - name: Audit formulas
+        run: |
+          brew audit --strict shriyanss/tap/js-recon
+          brew audit --strict shriyanss/tap/js-recon@alpha
+          brew audit --strict shriyanss/tap/js-recon@beta
 
-      - name: Install formula
-        run: brew install --build-from-source shriyanss/tap/js-recon
+      - name: Install formulas
+        run: |
+          brew install --build-from-source shriyanss/tap/js-recon
+          brew install --build-from-source shriyanss/tap/js-recon@alpha
+          brew install --build-from-source shriyanss/tap/js-recon@beta
 
-      - name: Test formula
-        run: brew test shriyanss/tap/js-recon
+      - name: Test formulas
+        run: |
+          brew test shriyanss/tap/js-recon
+          brew test shriyanss/tap/js-recon@alpha
+          brew test shriyanss/tap/js-recon@beta

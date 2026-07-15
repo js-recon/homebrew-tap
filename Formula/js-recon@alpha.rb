@@ -1,14 +1,18 @@
-class JsRecon < Formula
-  desc "JavaScript reconnaissance tool for mapping API endpoints and analyzing client-side security"
+class JsReconATAlpha < Formula
+  desc "JavaScript reconnaissance tool for mapping API endpoints and analyzing client-side security (alpha channel)"
   homepage "https://js-recon.io"
-  url "https://registry.npmjs.org/@shriyanss/js-recon/-/js-recon-1.3.1.tgz"
-  sha256 "83a35c7ff19ad24b63b0f0b37c1225753b49e0c9a48b53697d0d6e3b574192d5"
+  url "https://registry.npmjs.org/@shriyanss/js-recon/-/js-recon-1.4.1-alpha.8.tgz"
+  sha256 "f48ac837e38e16916d474c9a399a0fb3476e04df62b4c6adaceda4d26a91ff82"
   license "MIT"
 
   livecheck do
-    url "https://registry.npmjs.org/@shriyanss/js-recon/latest"
-    regex(/"version":\s*"(\d+(?:\.\d+)+)"/i)
+    url "https://registry.npmjs.org/@shriyanss/js-recon/alpha"
+    regex(/"version":\s*"(\S+)"/i)
   end
+
+  # Same binary name as shriyanss/tap/js-recon (the stable formula) — avoid
+  # linking into a shared bin/ automatically so both can coexist unlinked.
+  keg_only :versioned_formula
 
   depends_on "node"
 
@@ -24,6 +28,17 @@ class JsRecon < Formula
 
   def caveats
     <<~EOS
+      This is the alpha channel of js-recon — it tracks the latest prerelease,
+      not the stable release. For the stable release, install
+      `shriyanss/tap/js-recon` instead.
+
+      This formula is keg-only and does not link into Homebrew's shared bin/,
+      since it installs the same `js-recon` binary name as the stable
+      formula. To use it:
+        "$(brew --prefix)/opt/js-recon@alpha/bin/js-recon" --help
+      Or link it explicitly (this will conflict with a linked stable install):
+        brew link --overwrite js-recon@alpha
+
       The `lazyload` subcommand (and `run` pipelines that use it) require a
       Chromium-based browser at runtime. Puppeteer's bundled Chromium is not
       installed by this formula.
