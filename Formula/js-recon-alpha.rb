@@ -1,18 +1,18 @@
-class JsReconATBeta < Formula
-  desc "JavaScript reconnaissance tool for mapping API endpoints and analyzing client-side security (beta channel)"
+class JsReconAlpha < Formula
+  desc "JavaScript reconnaissance tool for mapping API endpoints and analyzing client-side security (alpha channel)"
   homepage "https://js-recon.io"
-  url "https://registry.npmjs.org/@shriyanss/js-recon/-/js-recon-1.3.1-beta.2.tgz"
-  sha256 "11e7a8a00f4282de3b1ab2a20c0e73c6b3fa1d193abcb71c0d3f19c4a600eb6e"
+  url "https://registry.npmjs.org/@shriyanss/js-recon/-/js-recon-1.4.1-alpha.8.tgz"
+  sha256 "f48ac837e38e16916d474c9a399a0fb3476e04df62b4c6adaceda4d26a91ff82"
   license "MIT"
 
   livecheck do
-    url "https://registry.npmjs.org/@shriyanss/js-recon/beta"
+    url "https://registry.npmjs.org/@shriyanss/js-recon/alpha"
     regex(/"version":\s*"(\S+)"/i)
   end
 
   # Same binary name as shriyanss/tap/js-recon (the stable formula) — avoid
   # linking into a shared bin/ automatically so both can coexist unlinked.
-  keg_only :versioned_formula
+  keg_only "js-recon-alpha installs the same `js-recon` binary name as shriyanss/tap/js-recon"
 
   depends_on "node"
 
@@ -28,16 +28,16 @@ class JsReconATBeta < Formula
 
   def caveats
     <<~EOS
-      This is the beta channel of js-recon — it tracks the latest beta
-      prerelease, not the stable release. For the stable release, install
+      This is the alpha channel of js-recon — it tracks the latest prerelease,
+      not the stable release. For the stable release, install
       `shriyanss/tap/js-recon` instead.
 
       This formula is keg-only and does not link into Homebrew's shared bin/,
       since it installs the same `js-recon` binary name as the stable
       formula. To use it:
-        "$(brew --prefix)/opt/js-recon@beta/bin/js-recon" --help
+        "$(brew --prefix)/opt/js-recon-alpha/bin/js-recon" --help
       Or link it explicitly (this will conflict with a linked stable install):
-        brew link --overwrite js-recon@beta
+        brew link --overwrite js-recon-alpha
 
       The `lazyload` subcommand (and `run` pipelines that use it) require a
       Chromium-based browser at runtime. Puppeteer's bundled Chromium is not
