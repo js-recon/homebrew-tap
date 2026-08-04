@@ -1,5 +1,7 @@
 # homebrew-tap
 
+[![Plumber Score](https://score.getplumber.io/github.com/js-recon/homebrew-tap.svg)](https://score.getplumber.io/github.com/js-recon/homebrew-tap)
+
 Homebrew tap for [JS Recon](https://github.com/js-recon/js-recon) — a JavaScript reconnaissance tool for mapping API endpoints and analyzing client-side security issues in modern web applications.
 
 ## Installation
