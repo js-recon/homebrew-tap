@@ -1,8 +1,8 @@
 class JsReconBeta < Formula
   desc "JavaScript recon tool for API mapping and client-side security analysis"
   homepage "https://js-recon.io"
-  url "https://registry.npmjs.org/@js-recon/js-recon/-/js-recon-2.0.1-beta.7.tgz"
-  sha256 "821bcd102f12e3dc1361d3ab6300918389fffb9ad9699c00aa2f54b2e5d08fd3"
+  url "https://registry.npmjs.org/@js-recon/js-recon/-/js-recon-2.0.1-beta.8.tgz"
+  sha256 "4a15e79aa1d377e21ac588d0b872ed4ac8fd0e251f60bf30ea96d361b0a9c1fc"
   license "MIT"
 
   livecheck do
