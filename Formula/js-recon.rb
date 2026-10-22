@@ -18,7 +18,8 @@ class JsRecon < Formula
     ENV["PUPPETEER_SKIP_CHROMIUM_DOWNLOAD"] = "1"
     ENV["PUPPETEER_SKIP_DOWNLOAD"] = "1"
 
-    system "npm", "install", *std_npm_args(ignore_scripts: false)
+    # --build-from-source makes @ladybugdb/core (via taintwire) skip its prebuilt binary and fail
+    system "npm", "install", *std_npm_args(ignore_scripts: false).reject { |a| a == "--build-from-source" }
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
